@@ -4,7 +4,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.io.File;
 
-public class TestMain {
+public class MainBT2 {
 
   private static final String LOGIN_URL = "https://dev.payos.vn/login";
   private static final String HOME_URL = "https://dev.payos.vn/";
@@ -32,12 +32,7 @@ public class TestMain {
     driver.findElement(Locators.btnLoginLocator).click();
   }
 
-  // Static method to perform actions
-  /**
-   * Performs a series of actions on the web application using the provided WebDriver.
-   *
-   * @param driver the WebDriver instance to interact with the web application
-   */
+
   private static void performActions(WebDriver driver) {
     // Click on the tenant button
     driver.findElement(Locators.btnTenant).click();
@@ -92,6 +87,7 @@ public class TestMain {
         return;
       }
       performActions(driver);
+
     } finally {
       driver.quit();
     }
