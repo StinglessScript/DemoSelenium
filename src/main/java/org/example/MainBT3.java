@@ -112,8 +112,7 @@ public class MainBT3 {
     lnkHome.click();
     WebElement laptopsCategoryLink = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@onclick=\"byCat('notebook')\"]")));
     laptopsCategoryLink.click();
-    wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@id='tbodyid']//a[contains(@class,'hrefch')]")));
-    List<WebElement> laptopItems = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@id='tbodyid']//a[contains(@class,'hrefch')]")));
+    List<WebElement> laptopItems = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='tbodyid']//a[contains(@class,'hrefch')]")));
     if (!laptopItems.isEmpty()) {
       laptopItems.getFirst().click();
     } else {
@@ -169,11 +168,10 @@ public class MainBT3 {
           System.out.println("Mã đơn hàng: " + line.split(":")[1].trim());
         }
       }
-      System.out.println("-------------------------");
-      System.out.println("Đặt hàng thành công và khớp dữ liệu truyền vào.");
       System.out.println("Tên người nhận hàng: " + DEFAULT_NAME);
       System.out.println("Số thẻ: " + DEFAULT_CARD);
       System.out.println("Địa chỉ nhận hàng: " + DEFAULT_CITY + ", " + DEFAULT_COUNTRY);
+      System.out.println("Đặt hàng thành công và khớp dữ liệu truyền vào.");
 
     } else {
       System.out.println("Đặt hàng không thành công hoặc thông tin không khớp.");
