@@ -112,7 +112,7 @@ public class MainBT3 {
     lnkHome.click();
     WebElement laptopsCategoryLink = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@onclick=\"byCat('notebook')\"]")));
     laptopsCategoryLink.click();
-    List<WebElement> laptopItems = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='tbodyid']//a[contains(@class,'hrefch')]")));
+    List<WebElement> laptopItems = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@id='tbodyid']//a[contains(@class,'hrefch')]")));
     if (!laptopItems.isEmpty()) {
       laptopItems.getFirst().click();
     } else {
